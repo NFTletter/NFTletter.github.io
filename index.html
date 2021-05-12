@@ -1,0 +1,110 @@
+<html>
+<link href='http://fonts.googleapis.com/css?family=Montserrat:light' rel='stylesheet' type='text/css'>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding">
+    <title>Letter</title>
+    <link href="../base1/cockpit.css" type="text/css" rel="stylesheet">
+    <script src="../base1/jquery.js"></script>
+    <script src="../base1/cockpit.js"></script>
+</head>
+<body onload="about()" style="font-family:helvetica;background-color:#EAEAEA;">
+
+    <br>
+    <pre id="output" style="border:none;background:white;"></pre>
+
+    <center>
+       <h1 style="font-size:7vw">✍️</h1>
+    </center>
+
+    <center>
+	    <b>Letter</b> is an <a href="https://eips.ethereum.org/EIPS/eip-721">ERC-721</a> Smart Contract that allows for the creation of <b>text-based NFTs</b>, meant for <b>written artistic expression</b>.
+      <br>
+      Letter allows for art pieces such as <b>poems</b>, <b>novels</b>, <b>manifestos</b> and <b>source code</b> to be minted as Non-Fungible Tokens into the <a href="https://ethereum.org/en/">Ethereum</a> blockchain.
+      <br>
+      <br>
+      Each Non-Fungible Token represents a <b>Page</b> with the following fields:
+      <br>
+	    <br>
+
+      <style type="text/css">
+      .tg  {border-collapse:collapse;border-spacing:0;}
+      .tg td{border-color:black;border-style:solid;border-width:1px;font-size:14px;
+        overflow:hidden;padding:10px 5px;word-break:normal;}
+      .tg th{border-color:black;border-style:solid;border-width:1px;font-size:14px;
+        font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+      .tg .tg-head{text-align:center;vertical-align:middle;font-weight:bold;background-color:#c0c0c0;}
+      .tg .tg-body{text-align:center;vertical-align:middle}
+      </style>
+
+      <table class="tg">
+      <thead>
+        <tr>
+          <th class="tg-head">Field<br></th>
+          <th class="tg-head">Description</th>
+          <th class="tg-head">Encoding</th>
+          <th class="tg-head">Optional?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="tg-body">Id</td>
+          <td class="tg-body">Page Id</td>
+          <td class="tg-body">HEX</td>
+          <td class="tg-body">no</td>
+        </tr>
+        <tr>
+          <td class="tg-body">Nonce</td>
+          <td class="tg-body">Page counter</td>
+          <td class="tg-body">HEX</td>
+          <td class="tg-body">no</td>
+        </tr>
+        <tr>
+          <td class="tg-body">Title</td>
+          <td class="tg-body">Title of the Page</td>
+          <td class="tg-body">Unicode</td>
+          <td class="tg-body">yes</td>
+        </tr>
+        <tr>
+          <td class="tg-body">Body</td>
+          <td class="tg-body">Actual contents of the Page</td>
+          <td class="tg-body">Unicode</td>
+          <td class="tg-body">no</td>
+        </tr>
+        <tr>
+          <td class="tg-body">Rubric</td>
+          <td class="tg-body">Author signature</td>
+          <td class="tg-body">Unicode</td>
+          <td class="tg-body">yes</td>
+        </tr>
+        <tr>
+          <td class="tg-body">Parent</td>
+          <td class="tg-body">Id of parent Page</td>
+          <td class="tg-body">HEX</td>
+          <td class="tg-body">yes</td>
+        </tr>
+      </tbody>
+      </table>
+
+    <br>
+    <a href="https://home.unicode.org/">Unicode</a> allows for the widest possible range of digital text-based expression.
+
+    </center>
+
+    <center>
+      <br>
+      Development is taking place at <a href="https://github.com/NFTletter/letter">github.com/NFTletter/letter</a>.
+      <br>
+      Any questions, bugs or feedback, feel free to contact the mantainer:
+      <br>
+      <b>barodrigues@pm.me</b>
+    </center>
+
+    <br>
+    <div style="horizontal-align:center;">
+       <center><img src="BEAR.png" width="100" height="100"></center>
+       <br>
+    </div>
+
+</body>
+</html>
