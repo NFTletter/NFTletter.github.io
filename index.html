@@ -25,7 +25,7 @@
       <br>
       Each Non-Fungible Token represents a <b>Page</b>.
       <br>
-      The NFT metadata is encoded as a <i>.json</i> file to be pinned on <a href="https://ipfs.io/">IPFS</a>:
+      The NFT metadata is encoded as a UTF-8 <i>.json</i> file to be pinned on <a href="https://ipfs.io/">IPFS</a> over <a href="https://pinata.cloud/">Pinata</a>:
       <br>
 	    <br>
 
@@ -52,33 +52,21 @@
     </thead>
     <tbody>
       <tr>
-        <td class="tg-9wq8">Id</td>
-        <td class="tg-9wq8">Page/Token Id</td>
-        <td class="tg-9wq8"><span style="font-style:italic">uint256</span></td>
-        <td class="tg-9wq8">no</td>
-      </tr>
-      <tr>
-        <td class="tg-9wq8">Nonce</td>
-        <td class="tg-9wq8">Page number</td>
-        <td class="tg-9wq8"><span style="font-style:italic">uint256</span></td>
-        <td class="tg-9wq8">no</td>
-      </tr>
-      <tr>
         <td class="tg-9wq8">Title</td>
         <td class="tg-9wq8">Title of the Page</td>
-        <td class="tg-9wq8"><span style="font-style:italic">ipfs://cid</span> for <span style="font-style:italic">.txt</span> (UTF-8)</td>
+        <td class="tg-9wq8"><span style="font-style:italic">string (UTF-8)</td>
         <td class="tg-9wq8">yes</td>
       </tr>
       <tr>
         <td class="tg-9wq8">Body</td>
         <td class="tg-9wq8">Actual contents of the Page</td>
-        <td class="tg-9wq8"><span style="font-style:italic">ipfs://cid</span> for <span style="font-style:italic">.txt</span> (UTF-8)</td>
+        <td class="tg-9wq8"><span style="font-style:italic">string (UTF-8)</td>
         <td class="tg-9wq8">no</td>
       </tr>
       <tr>
         <td class="tg-0lax">Rubric</td>
         <td class="tg-baqh">Author signature</td>
-        <td class="tg-0lax"><span style="font-style:italic">ipfs://cid </span>for <span style="font-style:italic">.txt</span> (UTF-8)</td>
+        <td class="tg-0lax">string (UTF-8)</td>
         <td class="tg-baqh">yes</td>
       </tr>
       <tr>
@@ -89,12 +77,6 @@
       </tr>
     </tbody>
     </table>
-
-    <br>
-    NFT Pages are minted, burned and traded against the LETT token.
-    <br>
-    <span style="font-style:italic">.json</span>, <span style="font-style:italic">.txt</span>, <span style="font-style:italic">.png</span> and <span style="font-style:italic">.svg</span> files are pinned to IPFS over <a href="https://pinata.cloud/">Pinata</a>.
-    <br>
 
     </center>
 
