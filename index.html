@@ -8,75 +8,33 @@
     <script src="../base1/jquery.js"></script>
     <script src="../base1/cockpit.js"></script>
 </head>
-<body onload="about()" style="font-family:helvetica;background-color:#EAEAEA;">
+<body onload="about()" style="font-family:monospace;background-color:#EAEAEA;font-size:15">
 
     <br>
     <pre id="output" style="border:none;background:white;"></pre>
 
     <center>
-       <h1 style="font-size:7vw">📜✍️</h1>
+       <h1 style="font-size:7vw">📜 NFT Letter ✍️</h1>
     </center>
 
     <center>
-	    <b>Letter</b> is an <a href="http://erc721.org/">ERC-721</a> Smart Contract that allows for the creation of <b>text-based NFTs</b>, meant for <b>written artistic expression</b>.
+      <b>Letter</b> is an <a href="http://erc721.org/">ERC-721</a> Smart Contract that allows for the creation of <b>text-based NFTs</b>, meant for <b>written artistic expression</b>.
       <br>
       Letter allows for art pieces such as <b>poems</b>, <b>novels</b>, <b>manifestos</b> and <b>source code</b> to be minted as Non-Fungible Tokens into the <a href="https://ethereum.org/en/">Ethereum</a> blockchain.
       <br>
       <br>
-      Each Non-Fungible Token represents a <b>Page</b>.
+      Every time a new Letter is minted, a new <b><a href="https://docs.openzeppelin.com/contracts/4.x/api/proxy#Clones"><i>Contract Clone</i></a></b> is deployed, inheriting the logic from the reference <b><i>Implementation Contract</i></b>.
       <br>
-      The NFT metadata is encoded as a UTF-8 <i>.json</i> file to be pinned on <a href="https://ipfs.io/">IPFS</a> over <a href="https://pinata.cloud/">Pinata</a>:
+      Within such <i>Contract Clone</i>, each Non-Fungible Token represents a <b>Page</b>, which consists of a string of <a href="https://home.unicode.org/"><b>Unicode</b></a> characters (max <b>65536</b>).
       <br>
-	    <br>
-
-      <style type="text/css">
-    .tg  {border-collapse:collapse;border-spacing:0;}
-    .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-      overflow:hidden;padding:10px 5px;word-break:normal;}
-    .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-      font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-    .tg .tg-9wq8{border-color:inherit;text-align:center;vertical-align:middle}
-    .tg .tg-baqh{text-align:center;vertical-align:top}
-    .tg .tg-roi2{background-color:#c0c0c0;border-color:inherit;text-align:center;vertical-align:middle}
-    .tg .tg-nrix{text-align:center;vertical-align:middle}
-    .tg .tg-0lax{text-align:left;vertical-align:top}
-    </style>
-    <table class="tg">
-    <thead>
-      <tr>
-        <th class="tg-roi2">Field<br></th>
-        <th class="tg-roi2">Description</th>
-        <th class="tg-roi2">Encoding</th>
-        <th class="tg-roi2">Optional?</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="tg-9wq8">Page Title</td>
-        <td class="tg-9wq8">Title of the Page</td>
-        <td class="tg-9wq8"><span style="font-style:italic">string (UTF-8)</td>
-        <td class="tg-9wq8">yes</td>
-      </tr>
-      <tr>
-        <td class="tg-9wq8">Page Body</td>
-        <td class="tg-9wq8">Actual contents of the Page</td>
-        <td class="tg-9wq8"><span style="font-style:italic">string (UTF-8)</td>
-        <td class="tg-9wq8">no</td>
-      </tr>
-      <tr>
-        <td class="tg-9wq8">Page Author</td>
-        <td class="tg-9wq8">Author signature</td>
-        <td class="tg-9wq8">string (UTF-8)</td>
-        <td class="tg-9wq8">yes</td>
-      </tr>
-      <tr>
-        <td class="tg-9wq8">Parent Page</td>
-        <td class="tg-9wq8">Id of parent Page/Token</td>
-        <td class="tg-9wq8"><span style="font-style:italic">uint256</span></td>
-        <td class="tg-9wq8">yes</td>
-      </tr>
-    </tbody>
-    </table>
+      Each Letter has an optional <b>Title</b> and <b>Author Signature</b> fields, both also consisting of Unicode characters (max <b>64</b> each).
+      <br>
+      <br>
+      <b>All text is stored on-chain</b>.
+      <br>
+      The number of characters on each Letter's Title, Author and Page contents determine the Gas to be paid by the NFT minter. 
+      <br>
+      Therefore, larger Letters are more expensive to mint. This economic dynamic discourages vandalism and meaningless NFTs.
 
     </center>
 
